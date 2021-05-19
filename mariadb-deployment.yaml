@@ -24,11 +24,11 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-pass
+              name: mariadb-pass
               key: password
         ports:
         - containerPort: 3306
-          name: db-port
+          name: mariadb
         volumeMounts:
         - name: mariadb-persistent-storage
           mountPath: /var/lib/mariadb
